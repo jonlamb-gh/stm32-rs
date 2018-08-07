@@ -4,7 +4,7 @@ set -e
 
 pushd ../svd
 if [ ! -f stm32f7x7.svd.patched ]; then
-    unzip -fjLL vendor/en.stm32f7_svd.zip
+    unzip -ojLL vendor/en.stm32f7_svd.zip
 fi
 popd
 

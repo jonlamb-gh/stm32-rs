@@ -6,6 +6,12 @@ pushd ../svd
 if [ ! -f stm32f7x7.svd.patched ]; then
     unzip -ojLL vendor/en.stm32f7_svd.zip
 fi
+
+for f in ./*.svd*; do
+    if [[ "$f" != *"stm32f7x7"* ]]; then
+        rm -f "$f"
+    fi
+done
 popd
 
 pushd ../

@@ -1,7 +1,12 @@
 use std::env;
 use std::fs;
 use std::path::PathBuf;
+use std::process::Command;
+
 fn main() {
+    // TODO - testing
+    Command::new("./build-util").spawn().expect("Failed to run the build-util script");
+
     if env::var_os("CARGO_FEATURE_RT").is_some() {
         let out = &PathBuf::from(env::var_os("OUT_DIR").unwrap());
         println!("cargo:rustc-link-search={}", out.display());

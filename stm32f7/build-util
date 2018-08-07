@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -e
+
+pushd ../svd
+./extract.sh
+popd
+
+pushd ../
+make
+popd

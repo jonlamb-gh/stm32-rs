@@ -3,8 +3,9 @@
 set -e
 
 pushd ../svd
-if [ ! -f stm32f7x7.svd.patched ]; then
-    unzip -ojLL vendor/en.stm32f7_svd.zip
+if [ ! -f stm32f7x7.svd ]; then
+    #unzip -ojLL vendor/en.stm32f7_svd.zip
+    cp ../stm32f7/stm32f7x7.svd .
 fi
 
 for f in ./*.svd*; do
